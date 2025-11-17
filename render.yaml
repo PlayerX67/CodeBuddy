@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: coding-ai-assistant
+    env: docker
+    region: oregon
+    plan: standard  # 16GB RAM + GPU not needed — 8GB is enough for 16B 4-bit
+    autoDeploy: true
+    disk:
+      name: ollama-data
+      mountPath: /root/.ollama
+      sizeGB: 50
